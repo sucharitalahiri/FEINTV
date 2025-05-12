@@ -1,0 +1,12 @@
+.button {
+  background-color: var(--color-black);
+  color: var(--color-primary);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  position:static;
+}
+.button:hover {
+  cursor: pointer;
+}

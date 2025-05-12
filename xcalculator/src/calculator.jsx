@@ -21,7 +21,7 @@ const Calculator = () => {
         } else if (/\/0$/.test(input)) {
           const left = input.split('/')[0];
           if (parseFloat(left) !== 0) {
-            setResult('Infinity');
+            setResult("Infinity");
           } else {
             setResult('NaN');
           }
