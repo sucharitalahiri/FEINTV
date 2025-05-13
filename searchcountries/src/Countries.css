@@ -12,9 +12,9 @@
   transition: transform 0.2s;
 }
 
-.countryCard:hover {
+/* .countryCard:hover {
   transform: scale(1.05);
-}
+} */
 
 .countryCard img {
   width: 120px;
