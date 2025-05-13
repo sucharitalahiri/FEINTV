@@ -28,8 +28,9 @@ function Countries() {
   
 
   return (
-    <><div style={{ padding: "20px", display: "flex", justifyContent: "center" }}>
-      <input
+    <>
+        <div style={{ padding: "20px", display: "flex", justifyContent: "center" }}>
+        <input
         type="text"
         placeholder="Search for countries..."
         value={searchText}
@@ -40,22 +41,27 @@ function Countries() {
           padding: "10px",
           fontSize: "16px",
           marginBottom: "20px",
-        }} />
-    </div><div style={{
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      gap: "20px"
-    }}>
+        }}
+      />
+        </div>
+      
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "20px"
+      }}>
         {filteredCountries.map((country) => (
           <div key={country.common} className="countryCard">
             <img
               src={country.png}
-              alt={`Flag of ${country.common}`} />
+              alt={`Flag of ${country.common}`}
+            />
             <h2>{country.common}</h2>
           </div>
         ))}
-      </div></>
+      </div>
+    </>
   );
 }
 
