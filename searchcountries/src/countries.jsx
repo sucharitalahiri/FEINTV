@@ -52,20 +52,12 @@ function Countries() {
         gap: "20px"
       }}>
         {filteredCountries.map((country) => (
-          <div key={country.common} className="countryCard" style={{
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            padding: "10px",
-            textAlign: "center",
-            width: "150px",
-            boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
-          }}>
+          <div key={country.common} className="countryCard">
             <img
               src={country.png}
               alt={`Flag of ${country.common}`}
-              style={{ width: "100%", height: "100px", objectFit: "cover" }}
             />
-            <h3 style={{ fontSize: "16px", marginTop: "10px" }}>{country.common}</h3>
+            <h3>{country.common}</h3>
           </div>
         ))}
       </div>
