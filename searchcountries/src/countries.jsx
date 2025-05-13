@@ -57,7 +57,7 @@ function Countries() {
               src={country.png}
               alt={`Flag of ${country.common}`}
             />
-            <h3>{country.common}</h3>
+            <h2>{country.common}</h2>
           </div>
         ))}
       </div>
