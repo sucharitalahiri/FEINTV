@@ -1,0 +1,75 @@
+.table-container {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.details-table th {
+  background-color: #009879 !important;
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+.details-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.details-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.details-table th:nth-child(1),
+.details-table td:nth-child(1) {
+  width: 5%;  /* ID */
+}
+
+.details-table th:nth-child(2),
+.details-table td:nth-child(2) {
+  width: 25%;  /* Name */
+}
+
+.details-table th:nth-child(3),
+.details-table td:nth-child(3) {
+  width: 45%;  /* Email */
+}
+
+.details-table th:nth-child(4),
+.details-table td:nth-child(4) {
+  width: 25%;  /* Role */
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 8px 16px;
+  background-color: #009879;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* .pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+} */
+
+.pagination-controls .current-page {
+  background-color: #009879;
+  color: white;
+  border: 2px solid #009879;
+}
+
