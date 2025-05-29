@@ -23,8 +23,8 @@ const Chatbot = () => {
     const { chat, setChat } = useOutletContext();
     const { mode } = useContext(Theme);
 
-  const handleSend = () => {
-    const res = chatData.find(item => input.toLowerCase() == item.question.toLowerCase());
+  const handleSend = (userInput) => {
+    const res = chatData.find(item => userInput.toLowerCase() == item.question.toLowerCase());
     let answer = "Sorry, Did not understand your query!";
     if (res != undefined) {
             answer = res.response;
@@ -32,7 +32,7 @@ const Chatbot = () => {
         setChat(prev => ([...prev,
         {
             type: 'Human',
-            text: input,
+            text: userInput,
             time: new Date(),
             id: chatId
         },

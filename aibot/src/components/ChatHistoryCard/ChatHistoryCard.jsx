@@ -1,61 +1,40 @@
-import { Box, Select, MenuItem, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { Box, Typography, Stack, Divider, Chip } from '@mui/material'
+import { format, isEqual, startOfDay, add } from 'date-fns'
+import ChattingCard from '../ChattingCard/ChattingCard'
 
-export default function ChatFilter({ allChats, filterChats }) {
+export default function ChatHistoryCard({ details }) {
 
-    const [option, setOption] = useState('All Ratings')
+    const formatDate = (date) => {
+        const today = startOfDay(new Date())
 
-    const handleChange = (e) => {
-        setOption(e.target.value)
-    }
-
-    // FILTER CHATS
-    useEffect(() => {
-
-        if (option == 'All Ratings') {
-            filterChats(allChats)
+        if (isEqual(date, today)) {
+            return `Today's chats`
+        }
+        else if (isEqual(today, add(date, { days: 1 }))) {
+            return `Yesterday's chats`
         }
         else {
-            const filtered = allChats.filter(item => {
-
-                let found = false
-
-                item.chat.forEach(ch => {
-                    if (ch.rating == option) {
-                        found = true
-                    }
-                })
-
-                return found
-            })
-
-            filterChats(filtered)
+            return format(date, 'do LLL yyyy')
         }
-
-    }, [option])
+    }
 
     return (
-        <Box
-            mb={3}
-        >
-            <Typography fontSize={12} mb={0.5}>
-                Filter by rating
-            </Typography>
-            <Select
-                value={option}
-                onChange={handleChange}
-                size='small'
-                sx={{
-                    minWidth: { xs: 1, md: 160 },
-                }}
+        <Box>
+            <Typography
+                fontWeight={700}
+                mb={2}
             >
-                <MenuItem value='All Ratings'>All Ratings</MenuItem>
-                <MenuItem value={1}>1 Star</MenuItem>
-                <MenuItem value={2}>2 Stars</MenuItem>
-                <MenuItem value={3}>3 Stars</MenuItem>
-                <MenuItem value={4}>4 Stars</MenuItem>
-                <MenuItem value={5}>5 Stars</MenuItem>
-            </Select>
+                {formatDate(startOfDay(new Date(details.datetime)))}
+            </Typography>
+
+            <Stack spacing={{xs:2, md:3}}>
+
+                {details.chat.map((item, index) => (
+                    <ChattingCard details={item} readOnly={true} key={index} />
+                ))}
+
+            </Stack>
+
         </Box>
     )
 }
