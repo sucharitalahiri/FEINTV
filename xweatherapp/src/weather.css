@@ -1,0 +1,38 @@
+.xweather-container {
+  background-color: #eaf6ff;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.xweather-container input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.xweather-container button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.weather-cards {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.weather-card {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+}
