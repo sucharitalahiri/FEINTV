@@ -10,42 +10,51 @@ const LoginPage = () => {
     e.preventDefault();
     if (username === 'user' && password === 'password') {
       setIsLoggedIn(true);
-      setMessage('Welcome, user!');
+      setMessage('');
     } else {
       setMessage('Invalid username or password');
+      setIsLoggedIn(false);
     }
   };
 
-  return (
-    <div>
+    return (
+    <div style={{ padding: "20px" }}>
       <h1>Login Page</h1>
 
-      {message && <p>{message}</p>}
-
-      {!isLoggedIn && (
+      {isLoggedIn ? (
+        <div>
+          <p>Welcome, {username}!</p>
+        </div>
+      ) : (
         <form onSubmit={handleSubmit}>
-          <div>
-            <label>
+          {message && <p>{message}</p>}
+
+          <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
+            <label htmlFor="username" style={{ width: "100px" }}>
               Username:
-              <input
-                type="text"
-                value={username}
-                required
-                onChange={(e) => setUsername(e.target.value)}
-              />
             </label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              required
+              placeholder="username"
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
 
-          <div>
-            <label>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
+            <label htmlFor="password" style={{ width: "100px" }}>
               Password:
-              <input
-                type="password"
-                value={password}
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
             </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              required
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
           <button type="submit">Submit</button>
