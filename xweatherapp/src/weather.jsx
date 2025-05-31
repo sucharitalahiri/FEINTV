@@ -40,7 +40,8 @@ function XWeather() {
       />
       <button onClick={handleSearch}>Search</button>
 
-      {loading && <p>Loading data…</p>}
+      {loading && <p>Loading data...</p>}
+
 
       {weather && (
         <div className="weather-cards">
