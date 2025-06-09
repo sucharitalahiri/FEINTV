@@ -12,7 +12,6 @@ const XDictionary = () => {
 
   const handleSearch = () => {
     const term = searchTerm.trim().toLowerCase();
-
     const found = dictionary.find(
       (entry) => entry.word.toLowerCase() === term
     );
@@ -27,6 +26,8 @@ const XDictionary = () => {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial", textAlign: "center" }}>
       <h1><strong>Dictionary App</strong></h1>
+
+      {/* ✅ Input for search */}
       <input
         type="text"
         value={searchTerm}
@@ -34,6 +35,8 @@ const XDictionary = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         style={{ padding: "6px", fontSize: "16px" }}
       />
+
+      {/* ✅ Search button */}
       <button
         onClick={handleSearch}
         style={{ marginLeft: "5px", padding: "6px 12px", fontSize: "16px" }}
@@ -41,9 +44,11 @@ const XDictionary = () => {
         Search
       </button>
 
-      
-        <h3><strong>Definition:</strong></h3>
-        {definition && <p>{definition}</p>}
+      {/* ✅ Output section always rendered */}
+      <div style={{ marginTop: "20px", fontSize: "18px" }}>
+        <h3>Definition:</h3>
+        <p>{definition}</p>
+      </div>
     </div>
   );
 };
