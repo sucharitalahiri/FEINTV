@@ -41,10 +41,9 @@ const XDictionary = () => {
         Search
       </button>
 
-      <div style={{ marginTop: "20px", fontSize: "18px" }}>
-        <strong>Definition:</strong>
+      
+        <h3><strong>Definition:</strong></h3>
         {definition && <p>{definition}</p>}
-      </div>
     </div>
   );
 };
